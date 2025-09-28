@@ -1,0 +1,7 @@
+{
+  "name": "ex6/demo",
+  "description": "Mini app EX6 avec Monolog",
+  "require": {
+    "monolog/monolog": "^3.7"
+  }
+}

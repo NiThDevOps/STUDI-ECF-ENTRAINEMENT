@@ -1,4 +1,4 @@
-﻿# STUDI-ECF-ENTRAINEMENT
+# STUDI-ECF-ENTRAINEMENT
 
 Ce dépôt regroupe les travaux de l'ECF d'entraînement (AT1, AT2, AT3) :
 - AT1 : scripts Bash, Ansible, préproduction, réplication DB (EX1–EX5)

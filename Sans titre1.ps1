@@ -1,10 +1,18 @@
-﻿@"
-# STUDI-ECF-ENTRAINEMENT
+# S'assurer que le dossier existe
+New-Item -ItemType Directory -Force -Path "AT2/EX6-docker/app" | Out-Null
 
-Ce dépôt regroupe les travaux de l'ECF d'entraînement (AT1, AT2, AT3) :
-- AT1 : scripts Bash, Ansible, préproduction, réplication DB (EX1–EX5)
-- AT2 : conteneurs Docker + limites + MAJ (EX6), déploiement Kubernetes sur Azure (EX7)
-- AT3 : supervision Zabbix + gestion d'incident (EX8–EX9)
+# Réécriture sans BOM
+$path = "AT2/EX6-docker/app/composer.json"
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($path, @"
+{
+  "name": "ex6/demo",
+  "description": "Mini app EX6 avec Monolog",
+  "require": {
+    "monolog/monolog": "^3.7"
+  }
+}
+"@, $utf8NoBom)
 
-Chaque sous-dossier possède un `evidence/` avec les preuves (captures, exports .txt/.json).
-"@ | Set-Content -Encoding UTF8 README.md
+# (Optionnel) vérifie que le fichier est bien là
+Get-Item $path

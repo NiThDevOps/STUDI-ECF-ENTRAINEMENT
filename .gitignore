@@ -1,16 +1,14 @@
-# OS
+# === Terraform ===
+**/.terraform/**
+*.tfstate
+*.tfstate.*
+crash.log
+tfplan
+*.tfplan*
+
+# (on garde .terraform.lock.hcl versionné)
+
+# === IDE/OS ===
+.vscode/
 .DS_Store
 Thumbs.db
-
-# Vendors
-node_modules/
-vendor/
-
-# Env & secrets
-*.env
-.env*
-secrets/*.json
-
-# Python/Tests
-**/.venv
-**/.pytest_cache

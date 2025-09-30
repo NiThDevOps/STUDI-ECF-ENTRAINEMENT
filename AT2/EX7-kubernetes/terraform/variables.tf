@@ -16,21 +16,14 @@ variable "aks_name" {
   default     = "aks-ecf"
 }
 
-variable "node_vm_size" {
-  description = "Taille de VM du nodepool"
-  type        = string
-  default     = "Standard_B2s"
-}
-
 variable "node_count" {
   description = "Nombre de nœuds"
   type        = number
   default     = 1
 }
 
-# Laisse null pour générer automatiquement un nom unique (acrecdemo<digits>)
-variable "acr_name" {
-  description = "Nom de l'ACR (unique global)"
+variable "node_vm_size" {
+  description = "Taille des nœuds"
   type        = string
-  default     = null
+  default     = "Standard_B2s"
 }
